@@ -1,0 +1,23 @@
+# 多目标立场检测项目依赖
+
+# 核心依赖
+torch>=2.0.0
+torch-geometric>=2.3.0
+transformers>=4.30.0
+
+# 数据处理
+pandas>=1.5.0
+openpyxl>=3.0.0
+
+# 语义相似度
+sentence-transformers>=2.2.0
+scikit-learn>=1.0.0
+
+# 图处理
+networkx>=2.8.0
+
+# LLM API
+dashscope>=1.0.0
+
+# 其他
+numpy>=1.20.0

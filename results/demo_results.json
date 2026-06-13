@@ -1,0 +1,181 @@
+{
+  "demo_info": "演示结果（模拟真实 LLM 响应）",
+  "results": [
+    {
+      "sample_id": 1,
+      "text": "\"What's happened's happened\"\n…\n为什么信条口碑好像不如盗梦空间呢\n\n炫技式结尾我还挺受用的🤧 ​​​",
+      "targets": [
+        {
+          "id": "T1",
+          "text": "《信条》口碑",
+          "normalized": "《信条》口碑",
+          "granularity_level": 2,
+          "type": "explicit",
+          "evidence": "为什么信条口碑好像不如盗梦空间呢",
+          "reasoning": "直接提及，比较对象"
+        },
+        {
+          "id": "T2",
+          "text": "《盗梦空间》口碑",
+          "normalized": "《盗梦空间》口碑",
+          "granularity_level": 2,
+          "type": "explicit",
+          "evidence": "信条口碑好像不如盗梦空间",
+          "reasoning": "比较对象"
+        },
+        {
+          "id": "T3",
+          "text": "炫技式结尾",
+          "normalized": "《信条》的炫技式结尾",
+          "granularity_level": 3,
+          "type": "explicit",
+          "evidence": "炫技式结尾我还挺受用的",
+          "reasoning": "直接评价"
+        }
+      ],
+      "relations": [
+        {
+          "target_a": "T1",
+          "target_b": "T2",
+          "relation": "contrast",
+          "direction": "bidirectional",
+          "evidence": "信条口碑好像不如盗梦空间",
+          "confidence": 0.95,
+          "reasoning": "两部电影的口碑进行对比"
+        },
+        {
+          "target_a": "T3",
+          "target_b": "T1",
+          "relation": "causal",
+          "direction": "T3→T1",
+          "evidence": "炫技式结尾我还挺受用的",
+          "confidence": 0.7,
+          "reasoning": "结尾质量影响口碑"
+        }
+      ],
+      "stances": [
+        {
+          "target_id": "T1",
+          "polarity": "neutral",
+          "intensity": "moderate",
+          "evidence": "为什么信条口碑好像不如盗梦空间呢",
+          "reasoning": "提出疑问，没有明确立场"
+        },
+        {
+          "target_id": "T2",
+          "polarity": "neutral",
+          "intensity": "weak",
+          "evidence": "信条口碑好像不如盗梦空间",
+          "reasoning": "作为比较基准，无明显立场"
+        },
+        {
+          "target_id": "T3",
+          "polarity": "support",
+          "intensity": "moderate",
+          "evidence": "炫技式结尾我还挺受用的🤧",
+          "reasoning": "明确表达喜欢，emoji 加强语气"
+        }
+      ],
+      "graph_stats": {
+        "num_nodes": 3,
+        "num_edges": 4
+      }
+    },
+    {
+      "sample_id": 2,
+      "text": "\"我会有坏想法的\"\"坏事也可以做！\"确定关系后开了倍速，爽啊！妈妈朋友的儿子  丁海寅 郑素敏 http://t.cn/A6EL5Uax ​​​",
+      "targets": [
+        {
+          "id": "T1",
+          "text": "妈妈朋友的儿子",
+          "normalized": "妈妈朋友的儿子（剧集）",
+          "granularity_level": 2,
+          "type": "explicit",
+          "evidence": "妈妈朋友的儿子 丁海寅 郑素敏",
+          "reasoning": "剧集名称，讨论主题"
+        },
+        {
+          "id": "T2",
+          "text": "丁海寅",
+          "normalized": "丁海寅",
+          "granularity_level": 2,
+          "type": "explicit",
+          "evidence": "丁海寅 郑素敏",
+          "reasoning": "演员，被提及"
+        },
+        {
+          "id": "T3",
+          "text": "郑素敏",
+          "normalized": "郑素敏",
+          "granularity_level": 2,
+          "type": "explicit",
+          "evidence": "丁海寅 郑素敏",
+          "reasoning": "演员，被提及"
+        },
+        {
+          "id": "T4",
+          "text": "确定关系后开了倍速",
+          "normalized": "剧情节奏（确定关系后）",
+          "granularity_level": 3,
+          "type": "explicit",
+          "evidence": "确定关系后开了倍速，爽啊",
+          "reasoning": "评价剧情节奏"
+        }
+      ],
+      "relations": [
+        {
+          "target_a": "T2",
+          "target_b": "T3",
+          "relation": "parallel",
+          "direction": "none",
+          "evidence": "丁海寅 郑素敏",
+          "confidence": 0.9,
+          "reasoning": "两位演员并列提及"
+        },
+        {
+          "target_a": "T4",
+          "target_b": "T1",
+          "relation": "causal",
+          "direction": "T4→T1",
+          "evidence": "确定关系后开了倍速，爽啊",
+          "confidence": 0.85,
+          "reasoning": "剧情节奏影响观看体验"
+        }
+      ],
+      "stances": [
+        {
+          "target_id": "T1",
+          "polarity": "support",
+          "intensity": "strong",
+          "evidence": "爽啊！",
+          "reasoning": "感叹号表达强烈情感"
+        },
+        {
+          "target_id": "T2",
+          "polarity": "support",
+          "intensity": "moderate",
+          "evidence": "丁海寅 郑素敏",
+          "reasoning": "提及演员，无明显评价但语境正面"
+        },
+        {
+          "target_id": "T3",
+          "polarity": "support",
+          "intensity": "moderate",
+          "evidence": "丁海寅 郑素敏",
+          "reasoning": "提及演员，无明显评价但语境正面"
+        },
+        {
+          "target_id": "T4",
+          "polarity": "support",
+          "intensity": "strong",
+          "evidence": "确定关系后开了倍速，爽啊！",
+          "reasoning": "倍速+ 爽啊表达正面评价"
+        }
+      ],
+      "graph_stats": {
+        "num_nodes": 4,
+        "num_edges": 4
+      }
+    }
+  ]
+}
